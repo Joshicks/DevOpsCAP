@@ -20,7 +20,7 @@ pipeline {
     }
     post { 
         always { 
-            deleteDir()
+            // deleteDir()
         }
         success {
             echo 'I succeeeded!'
