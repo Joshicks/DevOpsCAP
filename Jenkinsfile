@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools {
-        nodejs 'nodeJS12LTS'
-    }
     stages {
         stage('Build Frontend Web') {
             steps {
