@@ -4,7 +4,7 @@ pipeline {
         stage('Build Frontend Web') {
             steps {
                 echo 'Building Frontend Angular'
-                dir ('Angular6BaseCli/'){
+                dir ('./Angular6BaseCli/'){
                     sh 'npm install'
                     sh 'npm run build'
                 }
