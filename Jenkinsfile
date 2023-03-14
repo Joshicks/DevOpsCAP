@@ -1,10 +1,13 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'nodeJS12LTS'
+    }
     stages {
         stage('Build Frontend Web') {
             steps {
                 echo 'Building Frontend Angular'
-                dir ('./Angular6BaseCli/'){
+                dir ('Angular6BaseCli/'){
                     sh 'npm install'
                     sh 'npm run build'
                 }
