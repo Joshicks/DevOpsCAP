@@ -10,13 +10,6 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Frontend Web') {
-            steps {
-                echo 'Deploy Frontend Angular'
-                sh 'docker build -t frontalex .'
-                sh 'docker run -d -p 9090:80 frontalex'
-            }
-        }
     }
     post { 
         always { 
@@ -26,9 +19,11 @@ pipeline {
             echo 'I succeeeded!'
         }
         unstable {
+            sh 'docker-compose down'
             echo 'I am unstable :/'
         }
         failure {
+            sh 'docker-compose down'
             echo 'I failed :('
         }
         changed {
