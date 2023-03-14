@@ -5,8 +5,8 @@ pipeline {
             steps {
                 echo 'Building Frontend Angular'
                 dir ('Angular6BaseCli/'){
-                    bat 'npm install'
-                    bat 'npm run build'
+                    sh 'npm install'
+                    sh 'npm run build'
                 }
             }
         }
