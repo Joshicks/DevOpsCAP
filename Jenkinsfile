@@ -6,18 +6,18 @@ pipeline {
             steps {
                 echo 'Building Frontend Angular'
                 dir ('myangular/'){
-                    sh 'npm -version'
-                    sh 'node -v'
-                    sh 'npm install'
-                    sh 'npm run build'
+                    bat 'npm -version'
+                    bat 'node -v'
+                    bat 'npm install'
+                    bat 'npm run build'
                 }
             }
         }
         stage('Deploy Frontend Web') {
             steps {
                 echo 'Deploy Frontend Angular'
-                sh 'docker build -t frontalex .'
-                sh 'docker run -d -p 9090:80 frontalex'
+                bat 'docker build -t frontalex .'
+                bat 'docker run -d -p 9090:80 frontalex'
             }
         }
     }
