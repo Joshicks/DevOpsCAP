@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    tools {nodejs "node19"}
     stages {
         stage('Build Frontend Web') {
             steps {
