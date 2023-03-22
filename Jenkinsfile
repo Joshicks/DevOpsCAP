@@ -5,6 +5,8 @@ pipeline {
             steps {
                 echo 'Building Frontend Angular'
                 dir ('myangular/'){
+                    sh 'npm -version'
+                    sh 'node -v'
                     sh 'npm install'
                     sh 'npm run build'
                 }
