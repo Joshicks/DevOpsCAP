@@ -1,2 +1,2 @@
 FROM nginx
-COPY Angular6BaseCli/dist /usr/share/nginx/html
+COPY myangular/dist /usr/share/nginx/html
